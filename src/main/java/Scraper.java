@@ -13,7 +13,7 @@ import org.jsoup.select.Elements;
 public class Scraper {
 
     private static int pageNumber = 1;
-    private static String url = "https://www.walmart.com/reviews/product/533396764page=" + pageNumber;
+    private static String url = "https://www.walmart.com/reviews/product/533396764?page=" + pageNumber;
     private static boolean enoughReviews = false;
 
     private static ArrayList<Review> revs = new ArrayList<Review>();
