@@ -38,6 +38,7 @@ public class Scraper {
           // scrape important information for each review
           for (Element review : reviews) {
 
+            String title = review.select("h3.w_kV33.w_Sl3f.w_mvVb.f5.b").text();
             String user = review.select("div.f6.gray.pr2.mb2").text();
             String comment = review.select(".tl-m.mb3.db-m").text();
             String rating = review.select("span.w_iUH7").text();
@@ -57,8 +58,12 @@ public class Scraper {
               verified = "Unverified Purchase";
             }
 
+            if (title.length() == 0) {
+              title = "No title";
+            }
+
             // Create Review object and add to ArrayList
-            Review singleReview = new Review(user, verified, date, rating, comment);
+            Review singleReview = new Review(title, user, verified, date, rating, comment);
             revs.add(singleReview);
           }
 

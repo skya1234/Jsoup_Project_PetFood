@@ -5,9 +5,11 @@ public class Review {
     private String comment;
     private String date;
     private String verified;
+    private String title;
 
     // Review Constructor
-    public Review(String user, String verified, String date, String rating, String comment) {
+    public Review(String title, String user, String verified, String date, String rating, String comment) {
+        this.title = title;
         this.user = user;
         this.date = date;
         this.rating = rating;
@@ -34,6 +36,10 @@ public class Review {
 
     public String getVerified() {
         return verified;
+    }
+
+    public String getTitle() {
+      return title;
     }
 
 }
