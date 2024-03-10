@@ -19,6 +19,7 @@ public class Scraper {
     private static ArrayList<Review> revs = new ArrayList<Review>();
 
     public static void main(String[] args) {
+      System.out.println("Scraping reviews..");
       Scraper.scrape(url);
       Scraper.writeToCSV();
     }
